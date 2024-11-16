@@ -1,0 +1,18 @@
+To solve this problem, we can use Floyd’s Cycle-Finding Algorithm. The idea is to use two pointers:
+
+  Slow pointer that moves one node at a time.
+  Fast pointer that moves two nodes at a time.
+If there is a cycle, the fast pointer will eventually meet the slow pointer. If there’s no cycle, the fast pointer will reach the end of the list. This approach has a time complexity of 
+𝑂(𝑛)and a space complexity of 𝑂(1), which is optimal for this problem.
+
+
+Explanation:
+.We start by checking if head is nullptr or if head->next is nullptr. If either is true, then the list has no cycle (it’s either empty or has only one node with no cycle).
+.We initialize two pointers, slow and fast. slow moves one step at a time, while fast moves two steps.
+.In each iteration of the while loop, we check if fast or fast->next is nullptr. If either is nullptr, then there’s no cycle, and we return false.
+.If fast and slow meet at the same node, it means there’s a cycle, and we return true.
+
+
+
+
+
