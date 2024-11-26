@@ -1,3 +1,9 @@
+Explanation:
+.We start by checking if head is nullptr or if head->next is nullptr. If either is true, then the list has no cycle (it’s either empty or has only one node with no cycle).
+.We initialize two pointers, slow and fast. slow moves one step at a time, while fast moves two steps.
+.In each iteration of the while loop, we check if fast or fast->next is nullptr. If either is nullptr, then there’s no cycle, and we return false.
+.If fast and slow meet at the same node, it means there’s a cycle, and we return true.
+
 bool hasCycle(struct ListNode *head) {
     if (head == NULL || head->next == NULL) {
         return false;
